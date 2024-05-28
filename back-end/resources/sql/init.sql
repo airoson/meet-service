@@ -1,6 +1,8 @@
 CREATE DATABASE meetservice;
 
-CREATE TABLE meetservice.room (
+\c meetservice
+
+CREATE TABLE room (
     room_id VARCHAR(36) PRIMARY KEY,
     created_at TIMESTAMP NOT NULL,
     starts_at TIMESTAMP,
@@ -12,14 +14,14 @@ CREATE TABLE meetservice.room (
     call_start TIMESTAMP
 );
 
-CREATE TABLE meetservice.user_at_call (
+CREATE TABLE user_at_call (
     room_id VARCHAR(36) REFERENCES room(room_id) ON DELETE CASCADE,
     user_id VARCHAR(36),
     shown_name VARCHAR(100),
     is_admin BOOLEAN DEFAULT FALSE
 );
 
-CREATE TABLE meetservice.registered_user (
+CREATE TABLE registered_user (
     user_id VARCHAR(36) PRIMARY KEY,
     phone VARCHAR(20),
     email VARCHAR(40),
@@ -28,14 +30,14 @@ CREATE TABLE meetservice.registered_user (
     role integer REFERENCES roles(role_id)
 );
 
-CREATE TABLE meetservice.refresh_token (
+CREATE TABLE refresh_token (
     token_id SERIAL PRIMARY KEY,
     content VARCHAR(100) NOT NULL UNIQUE,
     expires_at TIMESTAMP,
     user_id VARCHAR(36) REFERENCES registered_user(user_id)
 );
 
-CREATE TABLE meetservice.roles (
+CREATE TABLE roles (
     role_id serial PRIMARY KEY,
     name VARCHAR(10)
 );
