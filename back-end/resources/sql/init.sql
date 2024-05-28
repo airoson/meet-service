@@ -2,6 +2,20 @@ CREATE DATABASE meetservice;
 
 \c meetservice
 
+CREATE TABLE roles (
+    role_id serial PRIMARY KEY,
+    name VARCHAR(10)
+);
+
+CREATE TABLE registered_user (
+    user_id VARCHAR(36) PRIMARY KEY,
+    phone VARCHAR(20),
+    email VARCHAR(40),
+    password VARCHAR(256) not null,
+    shown_name VARCHAR(100),
+    role integer REFERENCES roles(role_id)
+);
+
 CREATE TABLE room (
     room_id VARCHAR(36) PRIMARY KEY,
     created_at TIMESTAMP NOT NULL,
@@ -21,15 +35,6 @@ CREATE TABLE user_at_call (
     is_admin BOOLEAN DEFAULT FALSE
 );
 
-CREATE TABLE registered_user (
-    user_id VARCHAR(36) PRIMARY KEY,
-    phone VARCHAR(20),
-    email VARCHAR(40),
-    password VARCHAR(256) not null,
-    shown_name VARCHAR(100),
-    role integer REFERENCES roles(role_id)
-);
-
 CREATE TABLE refresh_token (
     token_id SERIAL PRIMARY KEY,
     content VARCHAR(100) NOT NULL UNIQUE,
@@ -37,7 +42,3 @@ CREATE TABLE refresh_token (
     user_id VARCHAR(36) REFERENCES registered_user(user_id)
 );
 
-CREATE TABLE roles (
-    role_id serial PRIMARY KEY,
-    name VARCHAR(10)
-);
