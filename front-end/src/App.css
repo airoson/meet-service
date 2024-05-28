@@ -1,0 +1,248 @@
+html, #root, .App, body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: white;
+  height:100%;
+}
+
+header {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: #969696;
+}
+
+.header-buttons-holder {
+  margin: 20px;
+  justify-self: end;
+}
+
+button {
+  border: solid black;
+  background-color: transparent;
+  align-self: center;
+}
+
+.header-button {
+  margin: 10px 5px;
+  padding: 5px 10px;
+  font-size: 0.8em;
+}
+
+button:hover {
+  background-color: grey;
+}
+
+.home-url {
+  text-decoration: none;
+  margin: 10px 20px;
+  padding: 5px;
+
+}
+
+.home-url:hover {
+  text-decoration: underline;
+}
+
+.home-url:visited {
+  color: black;
+}
+
+.signup-form {
+  display: flex;
+  margin: 150px auto;
+  flex-direction: column;
+  justify-content: baseline;
+  background-color: #969696;
+  padding: 50px 30px;
+}
+
+.signup-form button {
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+
+.signup-form label {
+  display: flex;
+  margin: 5px 10px;
+  justify-content: space-between;
+}
+
+label input {
+  margin: 0 5px;
+}
+
+.form-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.user-holder {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.loading-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.user-info-holder {
+  margin-top: 100px;
+  display:inline;
+  background: #969696;
+  color:white;
+  padding: 20px;
+}
+
+.user-info-holder div {
+  font-size: 1.1em;
+}
+
+.user-info-holder span {
+  margin-left: 5px;
+}
+
+.change-field{
+  margin-left: 5px;
+  border: none;
+}
+
+.change-field-image {
+  width: 20px;
+  height: auto;
+}
+
+.user-info {
+  display: flex;
+  align-items: start;
+  padding: 3px;
+}
+
+.user-info-text {
+  outline: none;
+}
+
+.room-holder {
+  margin:5px;
+  border: solid 2px black;
+  padding: 5px;
+}
+
+.room-holder h3 {
+  display: inline;
+}
+
+.description-text {
+  resize: none;
+  outline: none;
+}
+
+.create-room div{
+  margin: 5px 0;
+}
+
+.room-create-button {
+  padding: 5px 10px;
+  font-size: 1.1em;
+}
+
+.room-interface-holder {
+  display: flex;
+  justify-content: start;
+  color: black;
+
+}
+
+.self-video-holder {
+  display:flex;
+  flex-direction: column;
+  margin: 5px 20px;
+}
+
+.room-video {
+  height: 240px;
+  width: auto;
+}
+
+.controls-panel {
+  margin-top: 10px;
+  padding: 10px;
+  display:flex;
+  flex-direction: column;
+}
+.controls { 
+  padding: 0 10px;
+}
+
+.controls-name {
+  margin-top: 5px;
+}
+
+#shown-name {
+  outline: none;
+}
+
+.controls input {
+  margin: 0 5px;
+}
+
+.connect-button {
+  padding: 5px 10px;
+  margin-top: 15px; 
+}
+
+.connect-button:hover {
+  background-color: lightgreen;
+}
+
+.remote-video-name {
+  color: black;
+}
+
+.home-holder {
+  color: black;
+  margin: 20px;
+}
+
+.home-holder h2 {
+  margin: 5px 20px;
+}
+
+.home-holder p {
+  margin: 5px;
+}
+
+.home-form-holder {
+  margin: 10px;
+}
+
+.remote-video-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 3px solid black;
+  padding: 20px;
+  margin: 30px;
+}
+
+.room-delete-button {
+  border: none;
+  background: none;
+  width:30px;
+  height:30px;
+  padding:5px;
+  border-radius: 50%;
+  position: relative;
+  top:2px;
+}
+
+.room-delete-button img  {
+  width:20px;
+  height:20px;
+  transform: rotate(45deg);
+}
